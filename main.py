@@ -8,7 +8,7 @@ group_id = int(os.environ['GROUP_ID'])
 channel_id = os.environ['CHANNEL_ID']
 keywords = [kw.strip().lower() for kw in os.environ['KEYWORDS'].split(',')]
 
-client = TelegramClient('session', api_id, api_hash)
+client = TelegramClient('cjp', api_id, api_hash)
 
 @client.on(events.NewMessage(chats=group_id))
 async def handler(event):
