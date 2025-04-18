@@ -13,6 +13,7 @@ client = TelegramClient('session', api_id, api_hash)
 @client.on(events.NewMessage(chats=group_id))
 async def handler(event):
     msg = event.raw_text.lower()
+    print(f"📩 Received message: {msg}")
     if any(keyword in msg for keyword in keywords):
         await client.send_message(channel_id, event.raw_text)
 
